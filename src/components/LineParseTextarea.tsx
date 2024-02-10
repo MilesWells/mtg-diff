@@ -24,5 +24,17 @@ export function LineParseTextarea({
 }
 
 function parseLinesFromValue(value: string) {
-  return value.split(/\r\n|\r|\n/).filter((line) => line.trim().length > 0);
+  return value
+    .trim()
+    .split(/\r\n|\r|\n/)
+    .map(parseLine)
+    .filter((line) => line.length > 0);
+}
+
+const numberedRegex = /^\d /;
+
+function parseLine(line: string) {
+  if (!numberedRegex.test(line)) return line.trim();
+
+  return line.replace(numberedRegex, '').trim();
 }

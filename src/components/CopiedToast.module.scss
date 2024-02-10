@@ -1,0 +1,23 @@
+.toast {
+  background-color: rgba(green, 0.5);
+  border-radius: 1rem;
+  border: 1px solid gray;
+  display: grid;
+  min-height: 3rem;
+  min-width: 10rem;
+  opacity: 1;
+  padding: 1rem;
+  place-items: center;
+  position: fixed;
+  top: 1rem;
+  transition: opacity 350ms ease-in;
+  right: 1rem;
+
+  &:not(.show):not(.hiding) {
+    display: none;
+  }
+
+  &.hiding {
+    opacity: 0;
+  }
+}

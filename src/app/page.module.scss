@@ -3,4 +3,23 @@
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
   padding: 2rem;
+
+  .header {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+
+    .count {
+      margin-left: auto;
+    }
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  .remaining {
+    height: 45rem;
+    overflow: auto;
+  }
 }
