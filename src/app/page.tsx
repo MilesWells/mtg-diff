@@ -1,16 +1,26 @@
 'use client';
 
-import { SimpleGrid } from '@mantine/core';
 import styles from './page.module.scss';
+import { LineParseTextarea } from '@/components/LineParseTextarea';
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <SimpleGrid cols={3}>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-      </SimpleGrid>
+      <section>
+        <h2>Cube List</h2>
+
+        <LineParseTextarea onLinesParsed={console.log} />
+      </section>
+
+      <section>
+        <h2>Removed Cards</h2>
+
+        <LineParseTextarea onLinesParsed={console.log} />
+      </section>
+
+      <section>
+        <h2>Remaining Cards</h2>
+      </section>
     </main>
   );
 }
