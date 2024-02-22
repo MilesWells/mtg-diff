@@ -1,16 +1,17 @@
+import { forwardRef } from 'react';
 import styles from './LineParseTextarea.module.scss';
 
 type LineParseTextareaProps = Omit<
   React.HTMLProps<HTMLTextAreaElement>,
-  'onChange'
+  'onChange' | 'ref'
 > & {
   onLinesParsed: (lines: string[]) => void;
 };
 
-export function LineParseTextarea({
-  onLinesParsed,
-  ...textareaProps
-}: LineParseTextareaProps) {
+export const LineParseTextarea = forwardRef<
+  HTMLTextAreaElement,
+  LineParseTextareaProps
+>(function LineParseTextarea({ onLinesParsed, ...textareaProps }, ref) {
   return (
     <textarea
       className={styles.textarea}
@@ -18,10 +19,11 @@ export function LineParseTextarea({
         const lines = parseLinesFromValue(e.target.value);
         onLinesParsed(lines);
       }}
+      ref={ref}
       {...textareaProps}
     />
   );
-}
+});
 
 function parseLinesFromValue(value: string) {
   return value

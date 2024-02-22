@@ -1,0 +1,15 @@
+.floating {
+  background: white;
+  border: thin solid gray;
+  max-height: 30rem;
+  overflow: auto;
+
+  div {
+    cursor: pointer;
+    padding: 0.25rem;
+
+    &.active {
+      background: lightgray;
+    }
+  }
+}

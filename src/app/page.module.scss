@@ -18,6 +18,26 @@
     }
   }
 
+  .removed {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    input {
+      width: 50%;
+    }
+
+    .removedCard {
+      align-items: center;
+      display: flex;
+      gap: 0.2rem;
+
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
+
   .remaining {
     height: 45rem;
     overflow: auto;
